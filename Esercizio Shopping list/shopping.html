@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spesiamo</title>
+  </head>
+  <body>
+    <h1>LISTA SPESA:</h1>
+
+    <script>
+      let continua = 1;
+      let listaSpesa = [];
+
+      while (continua === 1) {
+        let aggiungiart = prompt(
+          "Inserisci articolo (o scrivi 'esci' per terminare):"
+        );
+
+        if (aggiungiart.toLowerCase() === "esci") {
+          continua = 0;
+        } else {
+          listaSpesa.push(aggiungiart);
+          console.log("Articolo aggiunto:", aggiungiart);
+        }
+      }
+    </script>
+  </body>
+</html>
