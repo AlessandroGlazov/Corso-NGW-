@@ -1,21 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon</title>
   </head>
   <body>
-    <h1>Amazon.it </h1>
+    <h1>Amazon.it</h1>
     <h1 id="datiCarta"></h1>
+    <h1 id="Password"></h1>
 
     <script>
-      let datiCarta = prompt("Inserisci i dati della tua carta:");
-      document.getElementById(
-        "datiCarta"
-      ).textContent = `Dati carta: ${datiCarta}`;
+      let Inizio = 1;
+      let stoppati = "STOP";
+     
+      stoppati = prompt("Inserisci 'STOP' per terminare:");
+      console.log(stoppati);
 
-      console.log(datiCarta);
+
+      while (stoppati != true) {
+        
+        let datiCarta = prompt("Inserisci i dati della tua carta:");
+        
+        console.log(datiCarta);
+
+    
+        let password = prompt("Inserisci la password della tua banca:");
+        console.log(password);
+
+        console.log("sono qui 2");
+
+    
+        stoppati = prompt("Inserisci 'STOP' per terminare:");
+        console.log(stoppati);
+      }
+
+
+      console.log("sono qui 3");
+
+      console.log("Hai terminato l'inserimento.");
     </script>
   </body>
 </html>
