@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    const banca = {
+        nome: "bancaItalia",
+        value: 1000,
+        clientList:['ale', 'andrea', 'nicolo', 'simone'],
+        clientPrint: function() {
+            for (let i=0 ; i<this.clientList.length; i++)
+            console.log(clientList[i]);
+        },
+      
+         
+        rataPay: function()  {
+            return this.value / 12;
+        },
+     };
+
+      let ale = banca.rataPay();
+      console.log("---------");
+      console.log(ale);
+      console.log("---------");
+      console.log(banca.rataPay());
+      console.log(ale)
+      
+      banca["nuovoCampo"] = "newValue";
+      banca["value"] = 2000;
+      delete banca["name"];
+      console.log(banca);
+
+      let valueAfterUpdate = banca.rataPay();
+      console.log(valueAfterUpdate.toPrecision(5));
+      
+</script>
+</body>
+</html>
