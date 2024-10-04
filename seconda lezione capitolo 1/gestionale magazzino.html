@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spesiamo</title>
+  </head>
+  <body>
+    <h1>LISTA SPESA:</h1>
+
+    <script>
+    
+      let listaSpesa = [];
+
+
+      switch(expression) {
+  case "aggiungi articolo":
+
+  let aggiungiart = prompt(
+          "Inserisci articolo (o scrivi 'stampa' per stampare):");
+            
+            listaSpesa.push(aggiungiart);
+          console.log("Articolo aggiunto: "+ aggiungiart);
+          document.write("Articolo aggiunto: "+ aggiungiart + "</br>");
+    break;
+
+  case "rimuovi articolo":
+    
+  let rimuoviart = prompt("Rimuovi articolo (scrivi rimuovi)")
+  listaSpesa.pop(aggiungiart);
+  console.log("Articolo eliminato: "- aggiungiart);
+  document.write("Articolo rimosso: "- aggiungiart + "</br>");
+    break;
+
+    case "stampa tutto":
+    document.write("Articolo aggiunto: "+ aggiungiart + "</br>");
+    console.log("Articolo aggiunto: "+ aggiungiart);
+
+
+}
+
+      
+    </script>
+  </body>
+</html>

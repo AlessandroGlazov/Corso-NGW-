@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <h1 id= "iddi" > lezione 2</h1>
+</head>
+<footer>
+   
+    <img id="pupone"   src="https://gianlucadimarzio.com/images/totti-image.jpg?p=intextimg&s=d43fc6d18d5a2ad5c629eec865a2ca25">
+</footer>
+
+
+<body>
+    <main id="mainn">
+
+    <button onclick="capsScritta()"> INGRANDISCI SCRITTA</button>
+    <button onclick="changeScritta()"> CHANGE SCRITTA</button>
+
+
+    <button onclick="addScritta()"> AGGIUNGI SCRITTA</button>
+    <button onclick="changeImg()"> CAMBIA IMMAGINE</button>
+    <button onclick="changebackg()"> CAMBIA BACKGROUND</button>
+
+
+
+
+    <script>
+
+        h1.viva = "viva er pupone";
+
+        h1.addEventListener("click", function() {
+          console.log("mouseover")
+
+        })
+
+
+        let h1 =document.getElementById("iddi");
+        h1.innerText = "un qualcosa";
+        h1.viva = "viva er pupone"
+
+
+        function changebackg(){
+        let mainn  = document.getElementById("mainn")
+        mainn.style.backgroundColor = " #ccc"
+
+        }
+
+
+        function changeScritta(){
+
+            let h1 = document.getElementById("iddi");
+            h1.innerText = "daje roma"
+
+        }
+ 
+        function capsScritta(){
+
+            let h1 = document.getElementById("iddi")
+            h1.innerText = h1.innerText.toUpperCase();
+        }
+
+
+        function addScritta(){
+
+          let scrittaNuova = document.createElement("p")
+        
+          scrittaNuova.innerText = "viva er pupone";
+          let mainn = document.getElementById("mainn");
+
+          mainn.appendChild(scrittaNuova);       
+
+
+
+         }
+
+
+         function changeImg(){
+            let changeImmagine = document.getElementById("pupone")
+            changeImmagine.setAttribute("src", "https://i.pinimg.com/474x/b3/5e/e7/b35ee7d3147f090a53a8720481363114.jpg")
+            let mainn = document.getElementById("mainn");
+        }
+    </script>
+    </main>
+</body>
+</html>

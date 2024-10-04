@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main> 
+
+        <h1>FETCH</h1>
+        <button onclick="richiesta()">Connettiti </button>
+        <button onclick="richiesta_async()">Connettiti </button>
+
+      
+        
+
+        <footer>
+
+        </footer>
+    </main>
+    <script>
+
+    //www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+     async function richiesta_async() {
+
+        let rispostaAwait = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita");
+        
+        let risposta_json = await risposta.json();
+        console.log(risposta_json)
+
+     }
+
+      function richiesta() {
+        let risposta = fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita");
+      
+      
+    
+        console.log(risposta)
+     }
+    </script>
+</body>
+</html>
