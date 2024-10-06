@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrati</title>
+
+</head>
+<body>
+
+    <h1>Registrazione</h1>
+    <form id="registrationForm">
+        <h1>Email:</form></label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <button type="submit">Invia</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const nome = document.getElementById('nome').value;
+            const cognome = document.getElementById('cognome').value;
+            const password = document.getElementById('password').value;
+
+            if (email === "" || nome === "" || cognome === "" || password === "") {
+                console.error("Tutti i campi devono essere compilati.");
+                return;
+            }
+
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <h2>Benvenuto, ${nome}!</h2>
+                <ul>
+                    <li>Email: ${email}</li>
+                    <li>Nome: ${nome}</li>
+                    <li>Cognome: ${cognome}</li>
+                </ul>
+            `;
+        });
+    </script>
+
+</body>
+</html>
