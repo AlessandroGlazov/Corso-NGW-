@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meteo API</title>
+</head>
+
+<body style="background-color:powderblue;">
+
+    <h1>Controlla il meteo</h1>
+
+    <input type="text" id="city" placeholder="Inserisci una citta'">
+
+
+    <button onclick="getWeather()">Risultati</button>
+    
+    <h1>☁️🌩️⛈️</h1>
+
+    <div id="weatherResult"></div>
+
+    <script>
+        async function getWeather() {
+
+
+            let citta = document.getElementById("city").value;
+
+            imageDaPulire = Immagine.substring(2);
+            image.src = "https" + Immagine 
+
+
+            if (citta === "") {
+                alert("Inserisci il nome di una citta'.");
+                return;
+            }
+
+
+            let url = `http://api.weatherapi.com/v1/current.json?key=1c98a8ca599d4af6841131304240710&q=${citta}&aqi=no`;
+
+            try {
+
+                let response = await fetch(url);
+                let data = await response.json();
+
+
+                document.getElementById("weatherResult").innerHTML = `
+                    <h3>Meteo a ${data.location.name}</h3>
+                    <p>Temperatura: ${data.current.temp_c}°C</p>
+                    <p>Condizione: ${data.current.condition.text}</p>
+                    <p>Giorno: ${data.current.is_day}</p>
+
+                    <p>Immagine: ${data.current.condition.icon}`;
+
+
+            } catch (error) {
+                console.error("Errore durante la richiesta meteo:", error);
+                document.getElementById("weatherResult").innerHTML = "<p>Errore durante la ricerca del meteo.</p>";
+            }
+            
+        }
+    </script>
+</body>
+
+</html>

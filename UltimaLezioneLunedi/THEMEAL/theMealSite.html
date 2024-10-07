@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+        <h1>Menu</label>
+            <button onclick="logout_to_index()"> Logout</button>
+
+    </main>
+
+
+    <h1>Cosa vuoi ordinare oggi? </label>
+
+
+        <input type="text" id="meal"></input> </label>
+        <button onclick="richiesta()">Cerca Pasto</button>
+
+        <div id="risultato"></div>
+
+
+
+        <script>
+
+            let aggiungiart = alert("BENVENUTO");
+
+
+
+
+            if (localStorage.getItem("utente") == undefined) {
+                window.location.href = "theMealLog.html";
+
+            }
+
+
+            function logout_to_index() {
+                let utente = localStorage.getItem("utente");
+                window.location.href = "theMealLog.html";
+            }
+
+            /////////////////////////////////////////
+
+            async function richiesta() {
+                let input = prompt("Cosa vuoi ordinare oggi?");
+                let mealName = document.getElementById("meal").value;
+
+                let risposta = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata");
+                let pasto = await risposta.json();
+                document.getElementById("risultato").innerHTML = `<h3>${pasto.strMeal}</h3>`
+
+                console.log(risposta)
+                console.log(pasto)
+
+
+            }
+
+            /////////////////////////////////////
+
+
+        </script>
+</body>
+
+</html>

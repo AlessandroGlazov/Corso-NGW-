@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+    <h1>Benvenuto <span id="nome-utente"> </span></h1>
+    <button onclick="logout_to_index()"> Logout</button>
+
+</main>
+    
+
+
+    <script>
+
+        let aggiungiart = alert(
+          "BENVENUTO"
+        );
+
+
+if (localStorage.getItem("utente") == undefined){
+            window.location.href = "es1.html";
+           
+        }
+       
+
+        function logout_to_index() {
+        let utente = localStorage.getItem("utente");
+        window.location.href = "es1.html";
+        } 
+
+        let utente = JSON.parsel(localStorage.getItem("utente"));
+        document.getElementById("nome-utente").innerHTML = utente.username + " " + utente.password;
+    
+    </script>
+</body>
+</html>
